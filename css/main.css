@@ -1,0 +1,1041 @@
+@charset "UTF-8";
+
+* {
+  padding: 0;
+  /*Во всех тегах отключены внутренние отступы*/
+  margin: 0;
+  /*Во всех тегах отключены внешние отступы*/
+  border: 0;
+  /*Выключены границы у всех тегов*/
+}
+
+*,
+*:before,
+*:after {
+  /*Для Firefox cвойства width и height будут включать в себя значения полей и границ, но не отступов (margin).*/
+  -webkit-box-sizing: border-box;
+  /*Для Safari и Chrome cвойства width и height будут включать в себя значения полей и границ, но не отступов (margin)*/
+  box-sizing: border-box;
+  /*для всех остальных браузеров cвойства width и height будут включать в себя значения полей и границ, но не отступов (margin)*/
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+/*Отключает обводку, которая возникает у некоторых браузеров*/
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+/*Делает блочными данные теги, для того чтобы к ним применялись блочные свойства(height,,max-width,min-width)*/
+
+html,
+body {
+  height: 100%;
+  /*Чтобы страница занимала 100% от высоты окна браузера*/
+  width: 100%;
+  /*Чтобы страница занимала 100% от ширины окна браузера*/
+  font-size: 100%;
+  /*Устанавливает стандартный размер текста*/
+  line-height: 1;
+  /*Устанавливает межстрочный интервыл на 1 для всех тегов*/
+  scroll-behavior: smooth;
+  /*Плавная прокрутка сайта*/
+  text-rendering: optimizeSpeed;
+  /*При загрузке текста приоритет идет на скорость*/
+  -ms-text-size-adjust: 100%;
+  /*На большенстве браузеров для телефонов будет стоять стандартный размер текста*/
+  -moz-text-size-adjust: 100%;
+  /*На браузере Firefox для телефонов будет стоять стандартный размер текста*/
+  -webkit-text-size-adjust: 100%;
+  /*На браузерах Safari и Chrome для телефонов будет стоять стандартный размер текста*/
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+/*Стиль текста кнопок и полей будет зависить от тега-родителя, в котором он(и) находи(я)ться*/
+
+input::-ms-clear {
+  display: none;
+}
+
+/*Значек очистки поля, который появляеться при введение в него чего-нибудь ,спрятан*/
+
+button {
+  cursor: pointer;
+}
+
+/*Для всех кнопок курсор обьявлен как указывающая рука*/
+
+button::-moz-focus-inner {
+  /*У кнопок в Firefox нестандартный вид*/
+  padding: 0;
+  /*Убирает специфические внутренние отступы у копок Firefox*/
+  border: 0;
+  /*Убираетт обводку у кнопок Firefox*/
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+/*Сылки становяться без нижнего подчеркивания*/
+
+a:hover {
+  text-decoration: none;
+}
+
+/*При наведении на ссылки тоже не будет подчеркивания*/
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+  /*Для всех элементов, которые не ссылки, при подчеркивании прерываеться на буквах, которые пересекают подчеркивание*/
+}
+
+table {
+  border-collapse: collapse;
+  /*при стыке ячеек таблицы одна линия */
+  border-spacing: 0;
+  /*расстояние между границами ячеек нет*/
+}
+
+ul li {
+  list-style: none;
+}
+
+/*Убираються значки пунктов в списке*/
+
+img {
+  vertical-align: top;
+  /*Выравнивание верхнего края изображения по верху самого высокого элемента строки*/
+  max-width: 100%;
+  /*По стандарту изображение будет размером с файл изображения*/
+  display: block;
+  /*Блочные изображения легче редактировать*/
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  /*Размер текста заголовков зависит от размера блока, в котором находиться заголовок*/
+  font-weight: inherit;
+  /*Насыщенность текста ставиться в зависимости от плотности блока, в котором находиться заголовок*/
+}
+
+.a {
+  background-color: #fff;
+}
+
+.wrapper {
+  -webkit-box-shadow: 2px 2px 5px 7px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 5px 7px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  width: 1600px;
+  height: 7050px;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #8C8F94;
+  opacity: 2;
+}
+
+.header {
+  align: center;
+  height: 1000px;
+  background: url("../img/Header_bg.png");
+}
+
+.header .header-menu {
+  position: relative;
+  padding-top: 20px;
+  display: inline-block;
+}
+
+.header .header-menu .header-menu__burger {
+  z-index: 600;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+}
+
+.header .header-menu .header-menu__burger:before {
+  content: '';
+  position: absolute;
+  background-color: black;
+  height: 3px;
+  width: 23px;
+  margin-left: 60px;
+  margin-top: 10px;
+  z-index: 60;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.header .header-menu .header-menu__burger span {
+  position: absolute;
+  background-color: black;
+  margin-left: 60px;
+  margin-top: 17px;
+  height: 3px;
+  width: 23px;
+  z-index: 60;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.header .header-menu .header-menu__burger:after {
+  content: '';
+  position: absolute;
+  background-color: black;
+  height: 3px;
+  width: 23px;
+  margin-left: 60px;
+  margin-top: 24px;
+  z-index: 60;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.header .header-menu .header-menu__burger_active:before {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-top: 25px;
+}
+
+.header .header-menu .header-menu__burger_active span {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-top: 25px;
+}
+
+.header .header-menu .header-menu__burger_active:after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  margin-top: 25px;
+}
+
+.header .header-menu .header-menu__burger-list {
+  position: absolute;
+  height: 10px;
+  width: 250px;
+  margin-left: 50px;
+  background-color: white;
+  -webkit-box-shadow: 3px 15px 25px 7px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 15px 25px 7px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.header .header-menu .header-menu__burger-list_active {
+  display: block;
+  height: 320px;
+}
+
+.header .header-menu .header-menu__burger-list-content {
+  margin: 60px 5px 0px 5px;
+  width: 240px;
+  height: 320px;
+}
+
+.header .header-menu .header-menu__burger-list-item {
+  letter-spacing: 2px;
+  -webkit-box-shadow: 3px 18px 25px 7px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 18px 25px 7px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  text-align: center;
+  line-height: 2;
+}
+
+.header .header__menu-item-1 {
+  padding-left: 170px;
+  display: inline-block;
+}
+
+.header .header__menu-item {
+  margin-left: 50px;
+  display: inline-block;
+}
+
+.header .header__menu-logo {
+  margin: 0 300px;
+  display: inline-block;
+}
+
+.header .header__menu-apple-btn {
+  height: 40px;
+  width: 120px;
+  background-color: #267DF4;
+  border-radius: 50px;
+  line-height: 2.4;
+  word-spacing: 6px;
+  margin-left: 60px;
+  display: inline-block;
+}
+
+.header .header__apple-btn-a {
+  color: white;
+}
+
+.header .header__apple-btn-img {
+  display: inline-block;
+  margin-top: 6px;
+  margin-left: 12px;
+}
+
+.header__title {
+  font-size: 62px;
+  margin-top: 60px;
+  margin-left: 450px;
+}
+
+.header__subtitle {
+  margin-top: 40px;
+  text-align: center;
+  margin-left: 490px;
+  width: 600px;
+}
+
+.header__watch-video {
+  padding-left: 720px;
+  padding-top: 55px;
+}
+
+.header__watch-video-btn {
+  border: 1px solid black;
+  line-height: 2.2;
+  width: 130px;
+  height: 40px;
+  border-radius: 40px;
+}
+
+.header__watch-video-btn-img {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.header__watch-video-btn-a {
+  color: #000;
+}
+
+.features {
+  height: 600px;
+}
+
+.features .features__container-1 {
+  display: inline-block;
+  width: 493px;
+  margin-left: 250px;
+  margin-top: 122px;
+}
+
+.features .features__container-2 {
+  display: inline-block;
+  width: 493px;
+  margin-left: 109px;
+  margin-top: 122px;
+}
+
+.features .features__container-img {
+  height: 50px;
+  width: 50px;
+}
+
+.features .features__container-text-title {
+  font-size: 26px;
+  padding-top: 40px;
+}
+
+.features .features__container-text-subtitle {
+  padding-top: 10px;
+}
+
+.ipone-features {
+  height: 902px;
+}
+
+.ipone-features .ipone-features__img {
+  display: inline-block;
+  height: 772px;
+  width: 811px;
+}
+
+.ipone-features .ipone-features-text {
+  padding-left: 150px;
+  width: 780px;
+  display: inline-block;
+}
+
+.ipone-features .ipone-features__title {
+  font-size: 42px;
+  width: 200px;
+}
+
+.ipone-features .ipone-features__subtitle {
+  width: 469px;
+}
+
+.ipone-features .ipone-features__subtitle-item-1 {
+  padding-top: 40px;
+}
+
+.ipone-features .ipone-features__subtitle-item-2 {
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+.ipone-features .ipone-features__hack-container {
+  display: inline-block;
+}
+
+.ipone-features .iphone-features__hack-btn {
+  border-radius: 50px;
+  height: 43px;
+  width: 203px;
+  background-color: #267DF4;
+  line-height: 1.8;
+}
+
+.ipone-features .ipone-features__hack-btn-title {
+  font-size: 20px;
+  color: white;
+  padding-top: 4px;
+  padding-left: 20px;
+}
+
+.ipone-features .ipone-features__hack-btn-img {
+  display: inline-block;
+  margin-top: 11px;
+  margin-left: 22px;
+}
+
+.ipone-features .ipone-features__learn-more-container {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.ipone-features .ipone-features__learn-more-btn {
+  border: 1px solid gray;
+  height: 43px;
+  width: 140px;
+  padding-left: 30px;
+  border-radius: 40px;
+}
+
+.ipone-features .ipone-features__learn-more-btn-title {
+  padding-top: 12px;
+  color: black;
+}
+
+.map-features {
+  height: 903px;
+}
+
+.map-features .map-features__container {
+  display: inline-block;
+}
+
+.map-features .map-feature__map {
+  display: inline-block;
+}
+
+.map-features {
+  height: 901px;
+}
+
+.map-features .map-features__container {
+  display: inline-block;
+}
+
+.map-features .map-features__map {
+  float: right;
+  display: inline-block;
+}
+
+.map-features .map-features__title {
+  font-size: 42px;
+  padding-left: 216px;
+}
+
+.map-features .map-features__subtitle {
+  padding-left: 214px;
+  padding-top: 20px;
+  width: 800px;
+}
+
+.map-features .map-features__partners-img {
+  padding-top: 60px;
+  padding-left: 214px;
+}
+
+.map-features .map-features__dropbox {
+  padding-left: 210px;
+  padding-top: 20px;
+  display: inline-block;
+}
+
+.map-features .map-features__evernote {
+  padding-left: 40px;
+  display: inline-block;
+}
+
+.iphone-screens {
+  height: 1203px;
+  background-color: #F5F5F8;
+  margin-top: 140px;
+}
+
+.iphone-screens .iphone-screens__title {
+  font-size: 42px;
+  margin-left: 623px;
+  padding-top: 60px;
+}
+
+.iphone-screens .iphone-screens__line {
+  height: 3px;
+  width: 51px;
+  background-color: #267DF4;
+  margin-left: 760px;
+  margin-top: 10px;
+}
+
+.iphone-screens .iphone-screens__landing_screen {
+  color: #8C8F94;
+  padding-left: 742px;
+  padding-top: 20px;
+}
+
+.iphone-screens .iphone-screens__item-1 {
+  -webkit-box-shadow: 3px 18px 25px 7px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 18px 25px 7px rgba(0, 0, 0, 0.2);
+  margin-left: 18px;
+  display: inline-block;
+  height: 480px;
+  width: 280px;
+}
+
+.iphone-screens .iphone-screens__item-2 {
+  -webkit-box-shadow: 3px 18px 25px 7px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 18px 25px 7px rgba(0, 0, 0, 0.2);
+  margin-left: 18px;
+  display: inline-block;
+  height: 480px;
+  width: 280px;
+}
+
+.iphone-screens .iphone-screens__item-3 {
+  margin-left: 18px;
+  border-radius: 40px;
+  padding-top: 150px;
+  display: inline-block;
+  height: 753px;
+  width: 369px;
+}
+
+.iphone-screens .iphone-screens__item-3-img {
+  border-radius: 60px;
+  -webkit-box-shadow: 3px 18px 25px 7px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 18px 25px 7px rgba(0, 0, 0, 0.2);
+}
+
+.iphone-screens .iphone-screens__item-4 {
+  -webkit-box-shadow: 3px 18px 25px 7px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 18px 25px 7px rgba(0, 0, 0, 0.2);
+  margin-left: 18px;
+  display: inline-block;
+  height: 480px;
+  width: 280px;
+}
+
+.iphone-screens .iphone-screens__item-5 {
+  -webkit-box-shadow: 3px 18px 25px 7px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 18px 25px 7px rgba(0, 0, 0, 0.2);
+  margin-left: 18px;
+  display: inline-block;
+  height: 480px;
+  width: 280px;
+}
+
+.ready-to-buy {
+  height: 551px;
+  background-color: #F5F5F8;
+}
+
+.ready-to-buy .ready-to-buy__logo {
+  padding-left: 750px;
+  height: 10px;
+  padding-top: 35px;
+}
+
+.ready-to-buy .ready-to-buy__title {
+  font-size: 42px;
+  padding-left: 600px;
+  padding-top: 50px;
+}
+
+.ready-to-buy .ready-to-buy__send-invite-container {
+  background-color: #F5F5F8;
+  border: 1px solid gray;
+  border-radius: 40px;
+  margin-left: 600px;
+  width: 437px;
+  height: 76px;
+  margin-top: 60px;
+}
+
+.ready-to-buy .ready-to-buy__send-invite-input {
+  display: inline-block;
+  width: 250px;
+  height: 64px;
+  margin-top: 2px;
+  margin-left: 30px;
+  background-color: #F5F5F8;
+  font-size: 30px;
+}
+
+.ready-to-buy .ready-to-buy__send-invite-btn {
+  display: inline-block;
+  height: 60px;
+  width: 145px;
+  border-radius: 60px;
+  background-color: #6FC754;
+}
+
+.ready-to-buy .ready-to-buy__send-invite-btn-title {
+  padding-top: 22px;
+  padding-bottom: 30px;
+  padding-left: 25px;
+  display: inline-block;
+  font-size: 16px;
+  color: white;
+}
+
+.ready-to-buy .ready-to-buy__send-invite-arrow {
+  display: inline-block;
+  padding-top: 25px;
+  padding-left: 10px;
+}
+
+.ready-to-buy .ready-to-buy__subtitle {
+  padding-left: 735px;
+  padding-top: 30px;
+}
+
+.ready-to-buy .ready-to-buy__app-store {
+  padding-left: 750px;
+  padding-top: 40px;
+  border-radius: 15px;
+}
+
+.customers {
+  height: 751px;
+}
+
+.customers .customers__img-item {
+  display: inline-block;
+  height: 100px;
+  margin-left: 200px;
+  margin-top: 40px;
+  -webkit-filter: grayscale(60%);
+  filter: grayscale(60%);
+  border-radius: 60px;
+  margin-bottom: 100px;
+}
+
+.customers .customers__space {
+  display: inline-block;
+  margin-left: 230px;
+  position: relative;
+}
+
+.customers .customers__img-item_active {
+  height: 130px;
+  -webkit-filter: unset;
+  filter: unset;
+}
+
+.customers .customers__title {
+  text-align: center;
+  font-size: 32px;
+  color: #26272D;
+}
+
+.customers .customers__subtitle {
+  text-align: center;
+  width: 900px;
+  margin-left: 400px;
+  margin-top: 70px;
+}
+
+.customers .customers__star-space {
+  display: inline-block;
+  margin-left: 700px;
+}
+
+.customers .customers__star {
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 100px;
+}
+
+.customers .customers__name {
+  font-weight: bold;
+  margin-left: 740px;
+  margin-top: 100px;
+}
+
+.customers .customers__left-sl-btn {
+  position: absolute;
+  margin-top: -130px;
+  margin-left: 250px;
+}
+
+.customers .customers__left-sl-btn:hover {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  background-color: gray;
+}
+
+.customers .customers__right-sl-btn {
+  position: absolute;
+  margin-top: -130px;
+  margin-left: 1300px;
+}
+
+.customers .customers__right-sl-btn:hover {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  background-color: gray;
+}
+
+.customers .customers__item {
+  display: none;
+}
+
+.customers .customers__item_active {
+  display: block;
+}
+
+.plan {
+  height: 901px;
+  background-color: #F4F4F5;
+}
+
+.plan .paln__main {
+  display: inline-block;
+}
+
+.plan .plan__card {
+  display: inline-block;
+}
+
+.plan .plan__card_active {
+  display: inline-block;
+}
+
+.plan .plan__title {
+  font-size: 42px;
+  margin-top: 150px;
+  margin-left: 217px;
+}
+
+.plan .plan__mini_title {
+  font-weight: bold;
+  margin-top: 70px;
+  margin-left: 215px;
+}
+
+.plan .plan__btn-contaiver {
+  z-index: 70;
+  border: 1px solid gray;
+  width: 260px;
+  height: 51px;
+  border-radius: 50px;
+  margin-left: 195px;
+  margin-top: 50px;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.plan .plan__btn {
+  height: 10px;
+  width: 10px;
+  background-color: white;
+  position: absolute;
+  height: 40px;
+  width: 120px;
+  margin-top: 4px;
+  margin-left: 8px;
+  border-radius: 50px;
+  -webkit-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  line-height: 2.5;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.plan .plan__btn_active {
+  margin-left: 130px;
+}
+
+.plan .par1 {
+  display: none;
+  cursor: pointer;
+}
+
+.plan .par2 {
+  display: none;
+  cursor: pointer;
+}
+
+.plan .par_active {
+  display: block;
+}
+
+.plan .plan__btn-contaiver-choose {
+  display: inline-block;
+  padding-left: 40px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.plan .plan__subtitle {
+  margin-left: 195px;
+  width: 351px;
+  margin-top: 100px;
+}
+
+.plan .plan__add-subtitle {
+  cursor: pointer;
+  margin-top: 70px;
+  margin-left: 195px;
+}
+
+.plan .plan__card {
+  display: inline-block;
+  position: absolute;
+  border: 1px solid black;
+  margin-top: 90px;
+  margin-left: 230px;
+  height: 600px;
+  width: 341px;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.plan .plan__card-extra {
+  display: inline-block;
+  position: absolute;
+  border: 1px solid black;
+  margin-left: 570px;
+  margin-top: 110px;
+  width: 341px;
+  height: 550px;
+  background-color: #EBEBED;
+  border-radius: 0 15px 15px 0;
+  -webkit-box-shadow: 6px 1px 10px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 6px 1px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.plan .plan__card-title {
+  font-size: 32px;
+  margin-top: 40px;
+  margin-left: 130px;
+}
+
+.plan .plan__card-title-a {
+  margin-left: 145px;
+}
+
+.plan .plan__card-free {
+  font-weight: bold;
+  margin-left: 140px;
+  padding-left: 8px;
+  border-radius: 50px;
+  margin-top: 20px;
+  border: 1px solid gray;
+  width: 60px;
+  height: 20px;
+}
+
+.plan .plan__card-subtitle {
+  color: #8C8F94;
+  margin-left: 87px;
+  margin-top: 40px;
+  font-size: 20px;
+  width: 169px;
+  text-align: center;
+}
+
+.plan .plan__card-features {
+  margin-top: 60px;
+  margin-left: 60px;
+}
+
+.plan .plan__card-features-li {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.plan .plan__card-features-li-sp {
+  margin-left: 40px;
+}
+
+.plan .plan__card-features-sp {
+  margin-top: 100px;
+}
+
+.plan .plan__card-features-li:before {
+  content: '✓';
+  color: #6FC754;
+}
+
+.plan .plan__card-btn-a {
+  display: block;
+  margin-top: 180px;
+  margin-left: 65px;
+  padding-left: 41px;
+  padding-top: 8px;
+  color: white;
+  border-radius: 50px;
+  background-color: #267DF4;
+  width: 213px;
+  height: 43px;
+  font-size: 27px;
+}
+
+.plan .plan__card-btn-a-sp {
+  display: block;
+  margin-top: 140px;
+  margin-left: 80px;
+  font-size: 22px;
+  color: #267DF4;
+  border-radius: 50px;
+  padding-left: 35px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  width: 200px;
+  border: 1px solid #267DF4;
+}
+
+.subscribe {
+  height: 351px;
+}
+
+.subscribe .subscribe__title {
+  font-size: 42px;
+  margin-left: 550px;
+  margin-top: 90px;
+}
+
+.subscribe .subscribe__input-container {
+  border: 1px solid gray;
+  border-radius: 50px;
+  margin-left: 490px;
+  margin-top: 20px;
+  width: 563px;
+  height: 51px;
+}
+
+.subscribe .subscribe__input {
+  margin-left: 30px;
+  margin-top: 3px;
+  height: 44px;
+  width: 400px;
+  font-size: 22px;
+}
+
+.subscribe .subscribe__input-btn {
+  display: inline-block;
+  font-size: 22px;
+  padding-top: 8px;
+  width: 120px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  padding-right: 10px;
+  border-radius: 50px;
+  background-color: #6FC754;
+  color: white;
+}
+
+.subscribe .subscribe__mini-subtitle {
+  color: gray;
+  margin-left: 660px;
+  margin-top: 30px;
+}
+
+.footer__main {
+  margin-top: 60px;
+  margin-left: 60px;
+  display: inline-block;
+}
+
+.footer__item {
+  margin-left: 60px;
+  display: inline-block;
+}
+
+.footer__item-sup {
+  margin-left: 500px;
+  display: inline-block;
+}
+
+.footer__item-title-a {
+  display: block;
+  font-weight: bold;
+  color: black;
+}
+
+.footer__item-subtitle-a {
+  display: block;
+  margin-top: 10px;
+  color: gray;
+}
+
+.footer__mini-subtitle {
+  margin-top: 15px;
+  width: 245px;
+}
+
+.footer__app-store {
+  margin-top: 20px;
+}
+
+.footer__social-media {
+  padding-top: 10px;
+  padding-left: 10px;
+  display: inline-block;
+}
+
+.footer__social-media-sup {
+  padding-left: 0;
+}
+
+.webp .header{ background: url(../img/Header_bg.webp); }
